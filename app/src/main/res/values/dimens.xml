@@ -5,8 +5,18 @@
 
     <!-- Raised Button dimens -->
     <dimen name="raised_button_padding">16dp</dimen>
-    <dimen name="raised_button_elevation">3dp</dimen>
+    <dimen name="raised_button_elevation">4dp</dimen>
     <dimen name="raised_button_corner_radius">4dp</dimen>
     <dimen name="raised_button_width_medium">128dp</dimen>
     <dimen name="raised_button_width_large">164dp</dimen>
+
+    <!-- TextViewShadow dimens -->
+    <dimen name="textSizeSmall">16sp</dimen>
+    <dimen name="textSizeMedium">25sp</dimen>
+    <dimen name="textSizeLarge">32sp</dimen>
+    <dimen name="textShadowSmall">2dp</dimen>
+    <dimen name="textShadowMedium">4dp</dimen>
+    <dimen name="textShadowLarge">6dp</dimen>
+
+
 </resources>

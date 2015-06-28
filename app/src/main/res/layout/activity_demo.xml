@@ -9,13 +9,39 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.thorrism.materialdesignskeleton.demo.DemoActivity">
 
+    <com.thorrism.materialdesignskeleton.views.TextViewShadow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:textColor="#666"
+        app:textSize="40sp"
+        app:text="Left Align" />
+
+    <com.thorrism.materialdesignskeleton.views.TextViewShadow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:textColor="#666"
+        app:textSize="40sp"
+        app:text="Center Align"
+        app:textElevation="@dimen/textShadowMedium" />
+
+    <com.thorrism.materialdesignskeleton.views.TextViewShadow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        app:textColor="#666"
+        app:textSize="40sp"
+        app:text="Right Align" />
+
+
     <com.thorrism.materialdesignskeleton.views.RaisedButton
         android:id="@+id/raised_btn"
         android:layout_width="@dimen/raised_button_width_medium"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:text="Raised!"
-        app:textColor="#fff"
+        app:content="Button 1"
+        app:contentColor="#fff"
         app:backgroundColor="#666"
         app:cornerRadius="4dp"
         app:raisedElevation="2dp"
