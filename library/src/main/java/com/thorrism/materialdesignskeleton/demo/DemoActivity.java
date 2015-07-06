@@ -3,10 +3,8 @@ package com.thorrism.materialdesignskeleton.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.thorrism.materialdesignskeleton.R;
-import com.thorrism.materialdesignskeleton.views.FlatButton;
 import com.thorrism.materialdesignskeleton.views.MaterialDialog;
 import com.thorrism.materialdesignskeleton.views.RaisedButton;
 
