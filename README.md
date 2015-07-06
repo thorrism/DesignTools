@@ -15,4 +15,13 @@ A repository for tools commonly used in applications to save time in development
 **_MaterialDialog_**: A dialog box that uses Material Design principles in order to easily craft a dialog box when necessary. Allows provides a callback for when the user accepts the dialog box message. The dialog is fully customizable as well with a simple programatic creation.
 
 ```
+MaterialDialog.with(MyActivity.this)
+              .setTitle(R.string.dialog_title)
+              .setBody(R.string.dialog_body)
+              .setSubmitListener(new MaterialDialog.OnSubmitListener(){
+                  @Override
+                  public void onSubmit(){
+                      //do something here, user has submit.
+                  }
+              }).show(getSupportFragmentManager(), "material_dialog");
 ```
