@@ -12,7 +12,8 @@
         android:paddingLeft="@dimen/dialog_border_padding"
         android:paddingRight="@dimen/dialog_border_padding"
         android:paddingBottom="@dimen/dialog_border_padding"
-        android:paddingTop="@dimen/dialog_title_padding"
+        android:paddingTop="10dp"
+        android:textSize="15sp"
         android:textColor="@color/dialog_text_color" />
 
     <RelativeLayout
@@ -27,9 +28,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/dialog_button_padding"
-            android:layout_marginLeft="@dimen/dialog_button_padding"
-            app:textSize="@dimen/dialog_text_size"
-            android:text="Submit" />
+            android:text="Submit"
+            style="@style/DialogTextStyle" />
 
         <com.thorrism.materialdesignskeleton.views.FlatButton
             android:id="@+id/cancel_btn"
@@ -38,8 +38,8 @@
             android:layout_toLeftOf="@+id/submit_btn"
             android:layout_toStartOf="@+id/submit_btn"
             android:layout_centerVertical="true"
-            app:textSize="@dimen/dialog_text_size"
-            android:text="Cancel" />
+            android:text="Cancel"
+            style="@style/DialogTextStyle" />
 
     </RelativeLayout>
 

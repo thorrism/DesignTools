@@ -66,8 +66,8 @@ public class LabelView extends TextView {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawLine(getPaddingLeft() - mTextPaddingLeft, getMeasuredHeight() - mLinePadding,
-                getMeasuredWidth(), getMeasuredHeight() - mLinePadding,
+        canvas.drawLine(getPaddingLeft() - mTextPaddingLeft, getMeasuredHeight() - mLineThickness,
+                getMeasuredWidth(), getMeasuredHeight() - mLineThickness,
                 mLinePaint);
     }
 

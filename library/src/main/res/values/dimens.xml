@@ -27,7 +27,7 @@
 
     <!--LabelView dimens -->
     <dimen name="text_padding_left">12dp</dimen>
-    <dimen name="label_line_padding">8dp</dimen>
+    <dimen name="label_line_padding">4dp</dimen>
     <dimen name="label_line_thickness">1dp</dimen>
 
 </resources>

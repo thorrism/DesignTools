@@ -29,7 +29,7 @@
         android:layout_marginBottom="16dp"
         app:lineColor="#03A9F4"
         app:lineThickness="1dp"
-        app:linePadding="8dp" />
+        app:linePadding="4dp" />
 
     <com.thorrism.materialdesignskeleton.views.RaisedButton
         android:id="@+id/raised_btn"
