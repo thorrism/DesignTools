@@ -2,12 +2,12 @@
 <resources>
 
     <declare-styleable name="RaisedButton">
-        <attr name="innerPadding" format="dimension"/>
-        <attr name="backgroundColor" format="color"/>
+        <attr name="innerPadding" format="dimension" />
+        <attr name="backgroundColor" format="color" />
         <attr name="contentColor" format="color" />
         <attr name="content" format="string" />
         <attr name="cornerRadius" format="dimension" />
-        <attr name="raisedElevation" format="dimension"/>
+        <attr name="raisedElevation" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="TextViewShadow">
@@ -15,6 +15,13 @@
         <attr name="text" format="string" />
         <attr name="textSize" format="dimension" />
         <attr name="textElevation" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LabelView">
+        <attr name="lineColor" format="color" />
+        <attr name="lineThickness" format="dimension" />
+        <attr name="linePadding" format="dimension" />
+        <attr name="textPadding" format="dimension" />
     </declare-styleable>
 
 </resources>

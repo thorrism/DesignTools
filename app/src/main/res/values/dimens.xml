@@ -18,5 +18,16 @@
     <dimen name="textShadowMedium">4dp</dimen>
     <dimen name="textShadowLarge">6dp</dimen>
 
+    <!-- MaterialDialog dimens -->
+    <dimen name="dialog_title_padding">20dp</dimen>
+    <dimen name="dialog_border_padding">24sp</dimen>
+    <dimen name="dialog_button_padding">8dp</dimen>
+    <dimen name="dialog_button_layout_height">52dp</dimen>
+    <dimen name="dialog_text_size">16sp</dimen>
+
+    <!--LabelView dimens -->
+    <dimen name="text_padding_left">12dp</dimen>
+    <dimen name="label_line_padding">8dp</dimen>
+    <dimen name="label_line_thickness">1dp</dimen>
 
 </resources>

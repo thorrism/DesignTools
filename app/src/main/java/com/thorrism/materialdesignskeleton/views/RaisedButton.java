@@ -28,9 +28,9 @@ import com.thorrism.materialdesignskeleton.R;
 public class RaisedButton extends CardView {
 
     //View properties for the raised button
-    private int mBtnPadding;
-    private int mBtnElevation;
-    private int mBtnCornerRadius;
+    private int mBtnPadding;      //Inner padding for button's text spacing
+    private int mBtnElevation;    //Elevation of the button
+    private int mBtnCornerRadius; //Radius for button's rounded corners.
     private int mBtnColor;
     private int mTextColor;
     private AppCompatTextView mTextView;
@@ -70,7 +70,7 @@ public class RaisedButton extends CardView {
         init();
     }
 
-    public void init() {
+    private void init() {
         setCardBackgroundColor(mBtnColor);
         setCardElevation(mBtnElevation);
         setRadius(mBtnCornerRadius);

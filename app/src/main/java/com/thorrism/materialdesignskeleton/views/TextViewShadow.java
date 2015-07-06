@@ -62,7 +62,7 @@ public class TextViewShadow extends View {
         return mText;
     }
 
-    public void init() {
+    private void init() {
         mShadowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mShadowPaint.setTextSize(getTextSize());
         mShadowPaint.setColor(getTextColor());
