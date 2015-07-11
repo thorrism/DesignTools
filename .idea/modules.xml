@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MaterialDesignSkeleton.iml" filepath="$PROJECT_DIR$/MaterialDesignSkeleton.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demos/demos.iml" filepath="$PROJECT_DIR$/demos/demos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/designtools/designtools.iml" filepath="$PROJECT_DIR$/designtools/designtools.iml" />
     </modules>
   </component>
 </project>
