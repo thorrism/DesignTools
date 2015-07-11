@@ -12,7 +12,7 @@ A repository for tools commonly used in applications to save time in development
 
 **_TextViewShadow_**: This view is just a TextView with a drop shadow drawn behind the text. This could be useful if for you need a raised TextView, and think it would look good. Not found in the Material Design guildines, but can still be useful.
 
-**_MaterialDialog_**: A dialog box that uses Material Design principles in order to easily craft a dialog box when necessary. Allows provides a callback for when the user accepts the dialog box message. The dialog is fully customizable as well with a simple programatic creation.
+**_MaterialDialog_**: A dialog box that uses Material Design principles in order to easily craft a dialog box when necessary. Also can provide a callback for when the user submits via submit button. The dialog is fully customizable as well with a simple programatic creation.
 
 ```
 MaterialDialog.with(MyActivity.this)
