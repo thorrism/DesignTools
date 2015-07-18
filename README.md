@@ -1,5 +1,7 @@
-# Material Design Skeleton
-A repository for tools commonly used in applications to save time in development. All the views use Material Design standards and should work for apis as far back as api 7.
+# Material Design Tools
+A repository for tools commonly used in applications to save time in development. All the views use Material Design standards and should work for apis as far back as api 7
+
+(**STILL IN DEVELOPMENT!**)
 
 # Tools:
 **_RaisedButton_**: Material Design inspired button that uses elevation and appears to be raised above the base surface of a view. This is one of the two types of buttons Google's Material Design guidelines suggest to use. 
@@ -9,6 +11,8 @@ A repository for tools commonly used in applications to save time in development
 **_SquareImageView_**: Simple ImageView modified to use the width as the height value as well so that the image is conformed into a square.
 
 **_LabelView_**: To make building menus easier, the LabelView allows you to add titles to sections where you have different types of items. The built in label view for a TextView from Android doesn't allow you to change colors to the line / text, this one does. Not found in the Material Design guidelines, but can still be useful.
+
+**_MaterialLabelView_**: Similar to just the SimpleLabelView, this one has a colored background to indicate sections, or labels, and would fit right in for other Material Design features. This look is a little more modern than the classic LabelView.
 
 **_TextViewShadow_**: This view is just a TextView with a drop shadow drawn behind the text. This could be useful if for you need a raised TextView, and think it would look good. Not found in the Material Design guildines, but can still be useful.
 
