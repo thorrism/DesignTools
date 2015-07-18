@@ -10,4 +10,6 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/dialog_button_color</item>
     </style>
+
+
 </resources>

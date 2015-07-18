@@ -2,9 +2,6 @@ package com.thorrism.designtools.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +44,7 @@ public class MaterialLabelView extends TextView {
 
         //Add padding inward for the text
         setPadding(getPaddingLeft() + mTextPadding, getPaddingTop() + mTextPadding,
-                getPaddingRight(), getPaddingBottom() + mTextPadding);
+                getPaddingRight() + mTextPadding, getPaddingBottom() + mTextPadding);
         setBackgroundColor(mBackgroundColor);
     }
 
@@ -55,10 +52,8 @@ public class MaterialLabelView extends TextView {
     protected void onMeasure(int measuredWidth, int measuredHeight) {
         super.onMeasure(measuredWidth, measuredHeight);
 
-        View v = (View) getParent();
-        ViewGroup.LayoutParams lp = v.getLayoutParams();
         int height = getMeasuredHeight();
-        int width = lp.width;
+        int width = getMeasuredWidth();
         setMeasuredDimension(width, height);
     }
 }

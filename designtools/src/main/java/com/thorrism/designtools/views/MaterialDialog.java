@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.thorrism.designtools.R;
 
-
 /**
  * Created by Lucas Crawford on 6/28/2015.
  */

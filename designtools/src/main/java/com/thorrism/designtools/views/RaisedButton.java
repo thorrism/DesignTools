@@ -8,7 +8,6 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
@@ -73,13 +72,13 @@ public class RaisedButton extends CardView {
         setRadius(mBtnCornerRadius);
 
         //Set parameters for the wrapper layout that will hold the textview in the card view
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
         mWrapper = new FrameLayout(getContext());
         mWrapper.setLayoutParams(params);
 
         //Set parameters for the text view in the raised button
-        params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+        params = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER;
         params.setMargins(mBtnPadding, mBtnPadding, mBtnPadding, mBtnPadding);
@@ -97,12 +96,35 @@ public class RaisedButton extends CardView {
         addView(mWrapper);
     }
 
+    public void setBackgroundColor(int color) {
+        setCardBackgroundColor(color);
+        invalidate();
+    }
+
+    public void setTextColor(int color) {
+        mTextView.setTextColor(color);
+        invalidate();
+    }
+
+    public void setEnabled(boolean enabled) {
+        if (enabled) {
+            setClickable(true);
+            setCardBackgroundColor(mBtnColor);
+            mTextView.setTextColor(mTextColor);
+        } else {
+            setClickable(false);
+            setCardBackgroundColor(getResources().getColor(R.color.disabled_color));
+            mTextView.setTextColor(getResources().getColor(R.color.disabled_font));
+        }
+        invalidate();
+    }
+
     /**
      * Add a new click listener for the card view
      *
      * @param listener - click listener for the raised button
      */
-    public void addClickListener(View.OnClickListener listener) {
+    public void addClickListener(OnClickListener listener) {
         setOnClickListener(listener);
     }
 

@@ -6,7 +6,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.thorrism.designtools.R;
@@ -62,9 +64,16 @@ public class TextViewShadow extends View {
         return mText;
     }
 
+    public void setText(String s) {
+        mText = s;
+        invalidate();
+        requestLayout();
+    }
+
     private void init() {
         mShadowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mShadowPaint.setTextSize(getTextSize());
+        mShadowPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD));
         mShadowPaint.setColor(getTextColor());
         mShadowPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         mShadowPaint.setStrokeWidth(1.0f);
@@ -77,7 +86,7 @@ public class TextViewShadow extends View {
         mShadowPaint.getTextBounds(mText.toString(), 0, mText.length(), mTextBounds);
         canvas.drawText(getText().toString(),
                 ((getWidth() / 2) - (mTextBounds.exactCenterX() + mShadowWidth)),
-                ((getHeight() / 2) - (mTextBounds.exactCenterY() + +mShadowWidth)),
+                ((getHeight() / 2) - (mTextBounds.exactCenterY() + mShadowWidth)),
                 mShadowPaint);
 
     }
@@ -86,6 +95,9 @@ public class TextViewShadow extends View {
     public void onMeasure(int measuredWidth, int measuredHeight) {
         super.onMeasure(measuredWidth, measuredHeight);
         mShadowPaint.getTextBounds(mText.toString(), 0, mText.length(), mTextBounds);
-        setMeasuredDimension(mTextBounds.width() + mShadowWidth * 2, (int) getTextSize() + mShadowWidth * 2);
+        int extra = (int) (mShadowWidth * 2.75);
+        setMeasuredDimension(mTextBounds.width() + extra, (int) getTextSize() + extra);
+
+        Log.e("Test", "Height: " + getMeasuredHeight());
     }
 }

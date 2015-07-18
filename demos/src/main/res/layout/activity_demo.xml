@@ -8,37 +8,75 @@
     android:orientation="vertical"
     tools:context="com.thorrism.materialdesignskeleton.demo.DemoActivity">
 
-    <com.thorrism.designtools.views.TextViewShadow
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:textColor="#666"
-        app:textSize="40sp"
-        app:text="Demos"
-        app:textElevation="@dimen/textShadowMedium" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.thorrism.designtools.views.MaterialLabelView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Examples"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:textColor="@color/material_text_color"
-        app:linePadding="4dp"
-        app:lineColor="@color/material_background_color" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <com.thorrism.designtools.views.RaisedButton
-        android:id="@+id/raised_btn"
-        android:layout_width="@dimen/raised_button_width_medium"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:content="Show Dialog"
-        app:contentColor="#fff"
-        app:backgroundColor="#666"
-        app:cornerRadius="4dp"
-        app:raisedElevation="2dp"
-        app:innerPadding="@dimen/raised_button_padding" />
+            <com.thorrism.designtools.views.TextViewShadow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:textColor="#666"
+                app:textSize="40sp"
+                app:text="Demos"
+                app:textElevation="@dimen/textShadowMedium" />
 
+            <com.thorrism.designtools.views.MaterialLabelView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wrapped LabelView"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/material_text_color"
+                app:linePadding="4dp"
+                app:lineColor="@color/material_background_color" />
+
+            <com.thorrism.designtools.views.MaterialLabelView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Full LabelView"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/material_text_color"
+                app:linePadding="4dp"
+                app:lineColor="@color/material_background_color" />
+
+            <com.thorrism.designtools.views.LabelView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Classic LabelView"
+                android:textColor="#00BCD4"
+                app:linePadding="4dp"
+                app:lineColor="#00BCD4" />
+
+            <com.thorrism.designtools.views.SquareImageView
+                android:id="@+id/square_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <com.thorrism.designtools.views.RaisedButton
+                android:id="@+id/raised_btn"
+                android:layout_width="@dimen/raised_button_width_medium"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:content="Show Dialog"
+                app:contentColor="#fff"
+                app:backgroundColor="#666"
+                app:cornerRadius="4dp"
+                app:raisedElevation="2dp"
+                app:innerPadding="@dimen/raised_button_padding" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

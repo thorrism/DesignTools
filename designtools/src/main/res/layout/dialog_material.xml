@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dialog_button_layout_height">
 
-        <com.thorrism.materialdesignskeleton.views.FlatButton
+        <com.thorrism.designtools.views.FlatButton
             android:id="@+id/submit_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:text="Submit"
             style="@style/DialogTextStyle" />
 
-        <com.thorrism.materialdesignskeleton.views.FlatButton
+        <com.thorrism.designtools.views.FlatButton
             android:id="@+id/cancel_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
