@@ -33,6 +33,7 @@ MaterialDialog.with(MyActivity.this)
 **_ShakeEditText_**: An EditText that incorporates a shaking animation when it is is submit with invalid input. The validation is done via a Validator that the developer must define. Supports setting an error message as well when invalid.
 
 '''
+    
     //Define the validator.
     public class EmailValidator implements Validator {
         private AppCompatEditText mEditText;
@@ -61,6 +62,7 @@ Now when the user presses 'Done' on the keyboard the validator is checked for th
 Also can attach the validation check to a button press:
 
 '''
+
     mButton.setOnClickListener(new OnClickListener(){
         @Override
         public void onClick(){
