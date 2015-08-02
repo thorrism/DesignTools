@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MaterialDesignSkeleton</string>
+    <string name="title_activity_demo">DemoActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Material Dialog strings -->
+    <string name="submit_text">Submit</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="dialog_title">Material Dialog</string>
+    <string name="dialog_message">This is an example of the material dialog box. Below are two flat buttons controlling the dialog.</string>
+</resources>

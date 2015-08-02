@@ -11,5 +11,12 @@
         <item name="android:textColor">@color/dialog_button_color</item>
     </style>
 
+    <style name="RaisedButtonStyle">
+        <item name="contentColor">#fff</item>
+        <item name="cornerRadius">4dp</item>
+        <item name="raisedElevation">2dp</item>
+        <item name="innerPadding">@dimen/raised_button_padding</item>
+    </style>
+
 
 </resources>

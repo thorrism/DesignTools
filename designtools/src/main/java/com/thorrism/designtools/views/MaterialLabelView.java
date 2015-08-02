@@ -30,9 +30,9 @@ public class MaterialLabelView extends TextView {
     public MaterialLabelView(Context context, AttributeSet attrs, int resourceId) {
         super(context, attrs, resourceId);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.LabelView, resourceId, 0);
-        mBackgroundColor = a.getColor(R.styleable.LabelView_lineColor, getCurrentTextColor());
-        mTextPadding = (int) a.getDimension(R.styleable.LabelView_textPadding,
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MaterialLabelView, resourceId, 0);
+        mBackgroundColor = a.getColor(R.styleable.MaterialLabelView_labelColor, getCurrentTextColor());
+        mTextPadding = (int) a.getDimension(R.styleable.MaterialLabelView_sidePadding,
                 getContext().getResources().getDimension(R.dimen.text_padding_left));
         a.recycle();
 

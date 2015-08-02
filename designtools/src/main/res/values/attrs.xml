@@ -24,4 +24,9 @@
         <attr name="textPadding" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="MaterialLabelView">
+        <attr name="labelColor" format="color" />
+        <attr name="sidePadding" format="dimension" />
+    </declare-styleable>
+
 </resources>
