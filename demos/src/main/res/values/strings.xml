@@ -9,5 +9,8 @@
     <string name="submit_text">Submit</string>
     <string name="cancel_text">Cancel</string>
     <string name="dialog_title">Material Dialog</string>
-    <string name="dialog_message">This is an example of the material dialog box. Below are two flat buttons controlling the dialog.</string>
+
+    <!-- drawer menu strings -->
+    <string name="item_one">Item 1</string>
+    <string name="item_two">Item 2</string>
 </resources>

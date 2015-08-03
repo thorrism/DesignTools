@@ -1,96 +1,20 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.thorrism.materialdesignskeleton.demo.DemoActivity">
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <include layout="@layout/app_bar_layout" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_gravity="start"
+        app:menu="@menu/drawer"
+        app:headerLayout="@layout/nav_header" />
 
-        <com.thorrism.designtools.views.TextViewShadow
-            android:id="@+id/title_shadowview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            app:textColor="#fff"
-            app:textSize="40sp"
-            app:text="Demos"
-            app:textElevation="@dimen/textShadowMedium" />
-
-        <com.thorrism.designtools.views.MaterialLabelView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Edit Shake"
-            android:textColor="#fff"
-            app:sidePadding="8dp"
-            app:labelColor="@color/material_green_light" />
-
-        <com.thorrism.designtools.views.ShakeEditText
-            android:id="@+id/name_edit"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:inputType="text"
-            android:singleLine="true"
-            android:imeOptions="actionDone"
-            android:hint="Try me!" />
-
-        <com.thorrism.designtools.views.RaisedButton
-            android:layout_width="@dimen/raised_button_width_medium"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:onClick="checkEdit"
-            app:content="Submit"
-            app:backgroundColor="@color/material_green"
-            style="@style/RaisedButtonStyle" />
-
-        <com.thorrism.designtools.views.MaterialLabelView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="Material Dialog"
-            android:textColor="#fff"
-            app:sidePadding="8dp"
-            app:labelColor="@color/material_green_light" />
-
-        <com.thorrism.designtools.views.RaisedButton
-            android:layout_width="@dimen/raised_button_width_medium"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:onClick="showDialog"
-            app:content="Show"
-            app:backgroundColor="@color/material_green"
-            style="@style/RaisedButtonStyle" />
-
-
-    </LinearLayout>
-
-
-    <!--<com.thorrism.designtools.views.SquareImageView-->
-    <!--android:id="@+id/square_image"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center_horizontal" />-->
-
-    <!--<com.thorrism.designtools.views.RaisedButton-->
-    <!--android:id="@+id/raised_btn"-->
-    <!--android:layout_width="@dimen/raised_button_width_medium"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center_horizontal"-->
-    <!--app:content="Show Dialog"-->
-    <!--app:contentColor="#fff"-->
-    <!--app:backgroundColor="#666"-->
-    <!--app:cornerRadius="4dp"-->
-    <!--app:raisedElevation="2dp"-->
-    <!--app:innerPadding="@dimen/raised_button_padding" />-->
-
-</RelativeLayout>
+</android.support.v4.widget.DrawerLayout>
