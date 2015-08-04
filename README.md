@@ -1,7 +1,7 @@
 # Material Design Tools
-A repository for tools commonly used in applications to save time in development. All the views use Material Design standards and should work for apis as far back as api 7
+A repository for tools commonly used in applications to save time in development. The purpose of this repo is mostly for me to avoid producing boilerplate code over and over again, but I decided to share for others who may be interested. All the views use Material Design standards and should work for apis as far back as api 7. 
 
-(**STILL IN DEVELOPMENT!**)
+(**This is a work in progress, mostly for myself but made public for others to enjoy :-). **)
 
 # Tools:
 **_RaisedButton_**: Material Design inspired button that uses elevation and appears to be raised above the base surface of a view. This is one of the two types of buttons Google's Material Design guidelines suggest to use. 
