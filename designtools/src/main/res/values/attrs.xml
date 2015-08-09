@@ -29,4 +29,8 @@
         <attr name="sidePadding" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="ShakeEditText">
+        <attr name="defaultError" format="string" />
+    </declare-styleable>
+
 </resources>

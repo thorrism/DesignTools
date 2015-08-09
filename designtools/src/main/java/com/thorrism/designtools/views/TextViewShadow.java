@@ -21,7 +21,6 @@ import com.thorrism.designtools.R;
  * Created by Lucas Crawford on 6/23/2015.
  */
 public class TextViewShadow extends View {
-
     private Paint mShadowPaint;
     private float mTextSize;
     private int mTextColor;
@@ -97,7 +96,5 @@ public class TextViewShadow extends View {
         mShadowPaint.getTextBounds(mText.toString(), 0, mText.length(), mTextBounds);
         int extra = (int) (mShadowWidth * 2.75);
         setMeasuredDimension(mTextBounds.width() + extra, (int) getTextSize() + extra);
-
-        Log.e("Test", "Height: " + getMeasuredHeight());
     }
 }

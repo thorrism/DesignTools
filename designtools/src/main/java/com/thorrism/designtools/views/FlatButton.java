@@ -28,18 +28,6 @@ public class FlatButton extends AppCompatButton {
     }
 
     private void init() {
-//        TypedArray a = getContext().obtainStyledAttributes(new int[]{android.R.attr.selectableItemBackground});
-//        int res = a.getResourceId(0, 0);
-//        a.recycle();
-//
-//        //Set background as transparent
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-//            setBackground(getContext().getResources().getDrawable(res));
-//        } else {
-//            setBackgroundDrawable(getContext().getResources().getDrawable(res));
-//        }
-
-
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
             setBackground(getContext().getResources().getDrawable(R.drawable.flat_button));
         } else {

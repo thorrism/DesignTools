@@ -5,6 +5,4 @@ package validators;
  */
 public interface Validator {
     public boolean validate();
-
-    public void setInvalidError();
 }

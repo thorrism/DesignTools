@@ -20,17 +20,17 @@ import java.util.HashSet;
 public class FormView extends ScrollView {
     private ArrayList<ShakeEditText> mEditFields;
 
-    public FormView(Context context){
+    public FormView(Context context) {
         super(context);
         init();
     }
 
-    public FormView(Context context, AttributeSet attrs){
+    public FormView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public FormView(Context context, AttributeSet attrs, int defStyle){
+    public FormView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -45,24 +45,25 @@ public class FormView extends ScrollView {
     }
 
     @Override
-    public void onAttachedToWindow(){
+    public void onAttachedToWindow() {
         View child;
         ViewGroup parent = (ViewGroup) getChildAt(0);
         int count = parent.getChildCount();
-        for(int i=0; i<count; ++i) {
+        for (int i = 0; i < count; ++i) {
             child = parent.getChildAt(i);
-            if(child instanceof TextInputLayout)
-                mEditFields.add( (ShakeEditText) ((TextInputLayout) child).getChildAt(0));
+            if (child instanceof TextInputLayout)
+                mEditFields.add((ShakeEditText) ((TextInputLayout) child).getChildAt(0));
         }
     }
 
     /**
      * Validate every field in the form view.
+     *
      * @return true if all valid, false if one or more are not.
      */
-    public boolean validateForm(){
-        for(ShakeEditText se : mEditFields){
-            if(!se.checkValidInput())
+    public boolean validateForm() {
+        for (ShakeEditText se : mEditFields) {
+            if (!se.checkValidInput())
                 return false;
         }
         return true;
@@ -70,14 +71,14 @@ public class FormView extends ScrollView {
 
     /**
      * Listener for form view to scroll to a view on focus.
-     *
+     * <p/>
      * TODO: Fix for API < 11. getY() issue. ( getBottom() ? )
      */
-    public class ScrollListener implements OnFocusChangeListener{
+    public class ScrollListener implements OnFocusChangeListener {
 
         @Override
-        public void onFocusChange(View v, boolean isFocus){
-            if(Build.VERSION.SDK_INT >= 11 && isFocus) {
+        public void onFocusChange(View v, boolean isFocus) {
+            if (Build.VERSION.SDK_INT >= 11 && isFocus) {
                 int y = (int) v.getY();
                 scrollTo(0, y);
             }
