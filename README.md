@@ -6,8 +6,7 @@ A repository for tools commonly used in applications to save time in development
 # Tools:
 **_RaisedButton_**: Material Design inspired button that uses elevation and appears to be raised above the base surface of a view. This is one of the two types of buttons Google's Material Design guidelines suggest to use. 
 
-**fields:**
-* cornerRadius - How rounded the corners are
+**fields:** * cornerRadius - How rounded the corners are
 * raisedElevation - thickness of shadow
 * innerPadding - inset padding of text to outside of button
 * backgroundColor - color of the button
