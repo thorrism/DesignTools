@@ -52,7 +52,10 @@ public class FormView extends ScrollView {
         for (int i = 0; i < count; ++i) {
             child = parent.getChildAt(i);
             if (child instanceof TextInputLayout)
-                mEditFields.add((ShakeEditText) ((TextInputLayout) child).getChildAt(0));
+                mEditFields.add((Validator) ((TextInputLayout) child).getChildAt(0));
+            else
+                if(child instanceof Validator)
+                    mEditFields.add( (Validator) child.getChildAt(0));
         }
     }
 
