@@ -38,20 +38,22 @@ public class FormView extends LinearLayout {
     private void init() {
         mEditFields = new ArrayList<>();
     }
-
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed, l, t, r, b);
-    }
-
+    
+    /**
+     * When the view is attached to the window, find all Validators and add them to
+     * our validator list.
+     */
     @Override
     public void onAttachedToWindow() {
         View child;
         int count = getChildCount();
         for (int i = 0; i < count; ++i) {
             child = getChildAt(i);
-            if (child instanceof TextInputLayout)
-                mEditFields.add((Validator) ((TextInputLayout) child).getChildAt(0));
+            if (child instanceof TextInputLayout){
+                View edit = child.getChildAt(0);
+                if(edit instanceof Validator)
+                    mEditFields.add((Validator) edit);
+            }
             else
                 if(child instanceof Validator)
                     mEditFields.add( (Validator) child);
