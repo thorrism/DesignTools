@@ -40,8 +40,8 @@ public class FormView extends LinearLayout {
     }
     
     /**
-     * When the view is attached to the window, find all Validators and add them to
-     * our validator list.
+     * When the view is attached to the window, find all Validators
+     * and add them to our validator list.
      */
     @Override
     public void onAttachedToWindow() {
