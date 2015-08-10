@@ -51,12 +51,12 @@ public class FormView extends LinearLayout {
             child = getChildAt(i);
             if (child instanceof TextInputLayout){
                 View edit = child.getChildAt(0);
-                if(edit instanceof Validator)
-                    mEditFields.add((Validator) edit);
+                if(edit instanceof ShakeEditText)
+                    mEditFields.add((ShakeEditText) edit);
             }
             else
-                if(child instanceof Validator)
-                    mEditFields.add( (Validator) child);
+                if(child instanceof ShakeEditText)
+                    mEditFields.add( (ShakeEditText) child);
         }
     }
 
