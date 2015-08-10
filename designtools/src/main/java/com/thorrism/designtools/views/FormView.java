@@ -17,7 +17,7 @@ import java.util.HashSet;
 /**
  * Created by Lucas Crawford on 8/6/2015.
  */
-public class FormView extends ScrollView {
+public class FormView extends LinearLayout {
     private ArrayList<ShakeEditText> mEditFields;
 
     public FormView(Context context) {
@@ -47,15 +47,14 @@ public class FormView extends ScrollView {
     @Override
     public void onAttachedToWindow() {
         View child;
-        ViewGroup parent = (ViewGroup) getChildAt(0);
-        int count = parent.getChildCount();
+        int count = getChildCount();
         for (int i = 0; i < count; ++i) {
-            child = parent.getChildAt(i);
+            child = getChildAt(i);
             if (child instanceof TextInputLayout)
                 mEditFields.add((Validator) ((TextInputLayout) child).getChildAt(0));
             else
                 if(child instanceof Validator)
-                    mEditFields.add( (Validator) child.getChildAt(0));
+                    mEditFields.add( (Validator) child);
         }
     }
 
@@ -70,22 +69,5 @@ public class FormView extends ScrollView {
                 return false;
         }
         return true;
-    }
-
-    /**
-     * Listener for form view to scroll to a view on focus.
-     * <p/>
-     * TODO: Fix for API < 11. getY() issue. ( getBottom() ? )
-     */
-    public class ScrollListener implements OnFocusChangeListener {
-
-        @Override
-        public void onFocusChange(View v, boolean isFocus) {
-            if (Build.VERSION.SDK_INT >= 11 && isFocus) {
-                int y = (int) v.getY();
-                scrollTo(0, y);
-            }
-
-        }
     }
 }
