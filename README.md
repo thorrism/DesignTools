@@ -74,7 +74,7 @@ MaterialDialog.with(MyActivity.this)
     mShakeEdit.setValidationListener(new EmailValidator(mShakeEdit));
 ```
 
-Now when the user presses 'Done' on the keyboard the validator is checked for the if it is a valid input or not. Or one can check as follows:
+Now when the user uses submits via keyboard the validator is checked for the if it is a valid input or not. Or one can check as follows:
 
 ```
   if(mShakeEdit.checkValidInput()){
@@ -90,7 +90,7 @@ Also can attach the validation check to a button press:
     mButton.setOnClickListener(new OnClickListener(){
         @Override
         public void onClick(){
-            if(mEditText.checkValidInput(){
+            if(mShakeEdit.checkValidInput(){
                 //valid input, do something here.
             }
         }
@@ -100,7 +100,7 @@ Also can attach the validation check to a button press:
 **fields**:
 * defaultError - The default error message for the ShakeEditText.
 
-**_FormView_**: A modified ScrollView that finds all the ShakeEditTexts that are apart of it's child layout, and can check all their fields at once for valid input. This saves time and effort in having to call the checkValidInput method for each field in your Activity. This simplies to:
+**_FormView_**: A modified LinearLayout that finds all the ShakeEditTexts that are apart of it's child layout, and can check all their fields at once for valid input. This saves time and effort in having to call the checkValidInput method for each field in your Activity. This simplies to:
 
 ```
     if(mFormView.isValid()){
