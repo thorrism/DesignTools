@@ -1,4 +1,4 @@
-package com.thorrism.materialdesignskeleton.demo;
+package com.thorrism.materialdesignskeleton.demo.Validators;
 
 import android.support.v7.widget.AppCompatEditText;
 
@@ -17,10 +17,5 @@ public class EmailValidator implements Validator {
     @Override
     public boolean validate() {
         return mEditText.getText().toString().contains("@");
-    }
-
-    @Override
-    public void setInvalidError() {
-        mEditText.setError("Invalid Email");
     }
 }

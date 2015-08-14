@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.animation.CycleInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.thorrism.designtools.R;
@@ -23,6 +24,7 @@ public class ShakeEditText extends AppCompatEditText {
     private Validator mValidationListener;
     private TranslateAnimation mAnimation;
     private String mDefaultError;
+    private int mShakeDuration = 300;
 
     public ShakeEditText(Context context) {
         super(context);
@@ -50,6 +52,22 @@ public class ShakeEditText extends AppCompatEditText {
         mValidationListener = listener;
     }
 
+    public void setShakeDuration(int duration) {
+        mShakeDuration = duration;
+    }
+
+    public int getShakeDuration() {
+        return mShakeDuration;
+    }
+
+    /**
+     * Hide keyboard anytime we submit.
+     */
+    private void hideKeyboard() {
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getWindowToken(), 0);
+    }
+
     /**
      * Check if the current input for the EditText is valid using
      * user's defined validation listener with default error.
@@ -57,6 +75,7 @@ public class ShakeEditText extends AppCompatEditText {
      * @return true if valid, false if not
      */
     public boolean checkValidInput() {
+        hideKeyboard();
         if (mValidationListener != null &&
                 !mValidationListener.validate()) {
             setInvalid(mDefaultError);
@@ -73,6 +92,7 @@ public class ShakeEditText extends AppCompatEditText {
      * @return true if valid false otherwise.
      */
     public boolean checkValidInput(@NonNull String message) {
+        hideKeyboard();
         if (mValidationListener != null &&
                 !mValidationListener.validate()) {
             setInvalid(message);
@@ -103,17 +123,14 @@ public class ShakeEditText extends AppCompatEditText {
         setOnEditorActionListener(new OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (EditorInfo.IME_ACTION_DONE == actionId) {
-                    checkValidInput();
-                }
-                return false;
+                return EditorInfo.IME_ACTION_DONE == actionId && checkValidInput();
             }
         });
 
         //set animation
         mAnimation = new TranslateAnimation(0, 8, 0, 0);
         mAnimation.setInterpolator(new CycleInterpolator(5));
-        mAnimation.setDuration(300);
+        mAnimation.setDuration(mShakeDuration);
 
     }
 

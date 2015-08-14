@@ -9,6 +9,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.v7.widget.Toolbar
@@ -19,85 +20,19 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:layout_scrollFlags="scroll|enterAlways" />
 
-        <!--<android.support.design.widget.TabLayout-->
-        <!--android:id="@+id/tabs"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:background="@color/material_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </android.support.design.widget.AppBarLayout>
 
     <!-- Main Content -->
-    <ScrollView
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_marginTop="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.thorrism.designtools.views.TextViewShadow
-                android:id="@+id/title_shadowview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                app:textColor="#000"
-                app:textSize="40sp"
-                app:text="Demos"
-                app:textElevation="@dimen/textShadowSmall" />
-
-            <com.thorrism.designtools.views.MaterialLabelView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Edit Shake"
-                android:textColor="#fff"
-                app:sidePadding="8dp"
-                app:labelColor="@color/material_green_light" />
-
-            <com.thorrism.designtools.views.ShakeEditText
-                android:id="@+id/name_edit"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:inputType="text"
-                android:singleLine="true"
-                android:imeOptions="actionDone"
-                android:hint="Try me!" />
-
-            <com.thorrism.designtools.views.RaisedButton
-                android:layout_width="@dimen/raised_button_width_medium"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:onClick="checkEdit"
-                app:content="Submit"
-                app:backgroundColor="@color/material_green"
-                style="@style/RaisedButtonStyle" />
-
-            <com.thorrism.designtools.views.MaterialLabelView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:text="Material Dialog"
-                android:textColor="#fff"
-                app:sidePadding="8dp"
-                app:labelColor="@color/material_green_light" />
-
-            <com.thorrism.designtools.views.RaisedButton
-                android:layout_width="@dimen/raised_button_width_medium"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:onClick="showDialog"
-                app:content="Show"
-                app:backgroundColor="@color/material_green"
-                style="@style/RaisedButtonStyle" />
-
-        </LinearLayout>
-    </ScrollView>
+        android:layout_height="match_parent" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.thorrism.designtools.views.FormView
+        android:id="@+id/content_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.thorrism.designtools.views.TextViewShadow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="64dp"
+            app:textColor="@color/material_blue"
+            app:textSize="32sp"
+            app:text="ShakeEdit"
+            app:textElevation="@dimen/textShadowSmall" />
+
+        <com.thorrism.designtools.views.MaterialLabelView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_email_label"
+            android:textColor="#fff"
+            app:sidePadding="8dp"
+            app:labelColor="@color/material_green_light" />
+
+        <com.thorrism.designtools.views.ShakeEditText
+            android:id="@+id/email_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:inputType="text"
+            android:singleLine="true"
+            android:hint="Email"
+            app:defaultError="@string/error_invalid_email" />
+
+        <com.thorrism.designtools.views.MaterialLabelView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/edit_name_label"
+            android:textColor="#fff"
+            app:sidePadding="8dp"
+            app:labelColor="@color/material_green_light" />
+
+        <com.thorrism.designtools.views.ShakeEditText
+            android:id="@+id/name_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:inputType="text"
+            android:singleLine="true"
+            android:hint="Name"
+            app:defaultError="@string/error_invalid_name" />
+
+        <com.thorrism.designtools.views.MaterialLabelView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/edit_password_label"
+            android:textColor="#fff"
+            app:sidePadding="8dp"
+            app:labelColor="@color/material_green_light" />
+
+        <com.thorrism.designtools.views.ShakeEditText
+            android:id="@+id/password_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:hint="Password"
+            app:defaultError="@string/error_invalid_password" />
+
+        <com.thorrism.designtools.views.ShakeEditText
+            android:id="@+id/password_confirm_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:hint="Confirm Password"
+            app:defaultError="@string/error_invalid_password_match" />
+
+        <com.thorrism.designtools.views.RaisedButton
+            android:layout_width="@dimen/raised_button_width_medium"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            app:content="Submit"
+            app:backgroundColor="@color/material_green"
+            style="@style/RaisedButtonStyle" />
+
+
+    </com.thorrism.designtools.views.FormView>
+</ScrollView>

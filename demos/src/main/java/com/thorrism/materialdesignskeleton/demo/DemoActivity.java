@@ -2,31 +2,51 @@ package com.thorrism.materialdesignskeleton.demo;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.thorrism.designtools.views.MaterialDialog;
+import com.thorrism.designtools.views.FormView;
 import com.thorrism.designtools.views.ShakeEditText;
 import com.thorrism.materialdesignskeleton.R;
+
+import com.thorrism.materialdesignskeleton.demo.Fragments.TabFragment;
 
 import interfaces.FromXml;
 
 public class DemoActivity extends AppCompatActivity {
     private ShakeEditText mShakeEdit;
+    private FormView mFormView;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavView;
+    private ViewPager mPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
 
-        //set toolbar
+        //setup the sliding drawer and toolbar
+        setupToolbar();
+        setupViewPager();
+    }
+
+    private void setupViewPager() {
+        mPager = (ViewPager) findViewById(R.id.view_pager);
+        mPager.setAdapter(new SectionPagerAdapter(getSupportFragmentManager()));
+        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
+        tabs.setupWithViewPager(mPager);
+    }
+
+    private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -35,17 +55,8 @@ public class DemoActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setHomeAsUpIndicator(R.mipmap.ic_menu);
 
-        //get drawer layout and navigation view
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavView = (NavigationView) findViewById(R.id.nav_view);
-        setupDrawerContent();
-
-        //Add shake edit and listener
-        mShakeEdit = (ShakeEditText) findViewById(R.id.name_edit);
-        mShakeEdit.setValidationListener(new EmailValidator(mShakeEdit));
-    }
-
-    private void setupDrawerContent() {
         mNavView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -55,6 +66,18 @@ public class DemoActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+    }
+
+    @FromXml
+    public void showFragment(MenuItem i) {
+        switch (i.getItemId()) {
+            case R.id.navigation_item_1:
+                mPager.setCurrentItem(0);
+                break;
+            case R.id.navigation_item_2:
+                mPager.setCurrentItem(1);
+                break;
+        }
     }
 
     @Override
@@ -67,24 +90,33 @@ public class DemoActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @FromXml
-    public void checkEdit(View v) {
-        if (mShakeEdit.checkValidInput()) {
-            //valid input!
+    public class SectionPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionPagerAdapter(FragmentManager fm) {
+            super(fm);
         }
-    }
 
-    @FromXml
-    public void showDialog(View v) {
-        MaterialDialog.with(getApplicationContext())
-                .setTitle(R.string.dialog_title)
-                .setBody("This is a material alert dialog. Dismiss with flat buttons below." +
-                        "")
-                .setSubmitListener(new MaterialDialog.SubmitListener() {
-                    @Override
-                    public void onSubmit() {
+        @Override
+        public Fragment getItem(int position) {
+            return new TabFragment().newInstance(position);
+        }
 
-                    }
-                }).show(getSupportFragmentManager(), "material_dialog");
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return TabFragment.TYPE_EDIT;
+                case 1:
+                default:
+                    return TabFragment.TYPE_DIALOG;
+            }
+        }
+
+
     }
 }

@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.thorrism.materialdesignskeleton.demo.Fragments.MaterialDialogFragment">
+
+    <com.thorrism.designtools.views.TextViewShadow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="64dp"
+        app:textColor="@color/material_blue"
+        app:textSize="32sp"
+        app:text="MaterialDialog"
+        app:textElevation="@dimen/textShadowSmall" />
+
+    <com.thorrism.designtools.views.MaterialLabelView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Material Dialog"
+        android:textColor="#fff"
+        app:sidePadding="8dp"
+        app:labelColor="@color/material_green_light" />
+
+    <com.thorrism.designtools.views.RaisedButton
+        android:id="@+id/show_dialog_btn"
+        android:layout_width="@dimen/raised_button_width_medium"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:content="Show"
+        app:backgroundColor="@color/material_green"
+        style="@style/RaisedButtonStyle" />
+
+</LinearLayout>

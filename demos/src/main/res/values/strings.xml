@@ -9,8 +9,20 @@
     <string name="submit_text">Submit</string>
     <string name="cancel_text">Cancel</string>
     <string name="dialog_title">Material Dialog</string>
+    <string name="edit_email_label">Edit Email</string>
+    <string name="edit_name_label">Edit Name</string>
+    <string name="edit_password_label">Edit Password</string>
+
+    <!-- validator errors -->
+    <string name="error_invalid_name">Invalid name!</string>
+    <string name="error_invalid_password">Invalid password!</string>
+    <string name="error_invalid_password_match">Passwords do not match!</string>
+    <string name="error_invalid_email">Invalid email!</string>
 
     <!-- drawer menu strings -->
-    <string name="item_one">Item 1</string>
-    <string name="item_two">Item 2</string>
+    <string name="item_one">Material Dialog</string>
+    <string name="item_two">Material Edit</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

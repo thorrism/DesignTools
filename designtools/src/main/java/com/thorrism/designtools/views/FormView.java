@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import java.util.ArrayList;
@@ -38,9 +39,9 @@ public class FormView extends LinearLayout {
     private void init() {
         mEditFields = new ArrayList<>();
     }
-    
+
     /**
-     * When the view is attached to the window, find all Validators
+     * When the view is attached to the window, find all com.thorrism.materialdesignskeleton.demo.Validators
      * and add them to our validator list.
      */
     @Override
@@ -49,14 +50,12 @@ public class FormView extends LinearLayout {
         int count = getChildCount();
         for (int i = 0; i < count; ++i) {
             child = getChildAt(i);
-            if (child instanceof TextInputLayout){
-                View edit = child.getChildAt(0);
-                if(edit instanceof ShakeEditText)
+            if (child instanceof TextInputLayout) {
+                View edit = ((TextInputLayout) child).getChildAt(0);
+                if (edit instanceof ShakeEditText)
                     mEditFields.add((ShakeEditText) edit);
-            }
-            else
-                if(child instanceof ShakeEditText)
-                    mEditFields.add( (ShakeEditText) child);
+            } else if (child instanceof ShakeEditText)
+                mEditFields.add((ShakeEditText) child);
         }
     }
 
