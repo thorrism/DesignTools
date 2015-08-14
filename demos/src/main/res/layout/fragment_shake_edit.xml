@@ -88,6 +88,7 @@
             app:defaultError="@string/error_invalid_password_match" />
 
         <com.thorrism.designtools.views.RaisedButton
+            android:id="@+id/submit_form_btn"
             android:layout_width="@dimen/raised_button_width_medium"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

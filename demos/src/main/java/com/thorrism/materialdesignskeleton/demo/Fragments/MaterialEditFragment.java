@@ -11,11 +11,11 @@ import com.thorrism.designtools.views.FormView;
 import com.thorrism.designtools.views.ShakeEditText;
 import com.thorrism.materialdesignskeleton.R;
 
+import com.thorrism.materialdesignskeleton.demo.DemoActivity;
 import com.thorrism.materialdesignskeleton.demo.Validators.EmailValidator;
 import com.thorrism.materialdesignskeleton.demo.Validators.NameValidator;
 import com.thorrism.materialdesignskeleton.demo.Validators.PasswordValidator;
 
-import interfaces.FromXml;
 import validators.Validator;
 
 /**
@@ -23,20 +23,24 @@ import validators.Validator;
  */
 public class MaterialEditFragment extends TabFragment {
     private FormView mFormView;
-    private ShakeEditText mEmailEdit;
 
     public MaterialEditFragment() {
     }
 
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_shake_edit, container, false);
+        setupForm(v);
+        return v;
     }
 
     private void setupForm(View v) {
         mFormView = (FormView) v.findViewById(R.id.content_form);
 
-        v.findViewById(R.id.content_form).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.submit_form_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 checkEdit();
@@ -48,10 +52,10 @@ public class MaterialEditFragment extends TabFragment {
     }
 
     public void setupFields(View v) {
-        mEmailEdit = (ShakeEditText) v.findViewById(R.id.email_edit);
+        final ShakeEditText mEmailEdit = (ShakeEditText) v.findViewById(R.id.email_edit);
         mEmailEdit.setValidationListener(new EmailValidator(mEmailEdit));
 
-        ShakeEditText mNameEdit = (ShakeEditText) v.findViewById(R.id.name_edit);
+        final ShakeEditText mNameEdit = (ShakeEditText) v.findViewById(R.id.name_edit);
         mNameEdit.setValidationListener(new NameValidator(mNameEdit));
 
         final ShakeEditText mPasswordEdit = (ShakeEditText) v.findViewById(R.id.password_edit);
@@ -61,34 +65,22 @@ public class MaterialEditFragment extends TabFragment {
         mPasswordConfirmEdit.setValidationListener(new Validator() {
             @Override
             public boolean validate() {
-                return mPasswordConfirmEdit.getText().toString().
-                        equals(mPasswordEdit.getText().toString());
+                if (mPasswordConfirmEdit.getText().toString().length() < 4) {
+                    mPasswordConfirmEdit.setDefaultError(getResources().getString(R.string.error_invalid_password));
+                    return false;
+                } else if (!mPasswordConfirmEdit.getText().toString().
+                        equals(mPasswordEdit.getText().toString())) {
+                    mPasswordConfirmEdit.setDefaultError(getResources().getString(R.string.error_invalid_password_match));
+                    return false;
+                }
+                return true;
             }
         });
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_shake_edit, container, false);
-        setupForm(v);
-        return v;
-    }
-
-    @FromXml
-    public void checkEdit() {
+    private void checkEdit() {
         if (mFormView.validateForm()) {
-            final Snackbar bar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                    "Form is valid!",
-                    Snackbar.LENGTH_LONG);
-            bar.setAction("CLEAR", new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    bar.dismiss();
-                }
-            }).setActionTextColor(Color.RED)
-                    .show();
+            ((DemoActivity) getActivity()).showSnackbar("Form is valid");
         }
     }
 }

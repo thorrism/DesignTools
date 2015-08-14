@@ -1,7 +1,9 @@
 package com.thorrism.materialdesignskeleton.demo;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +15,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.thorrism.designtools.views.FormView;
 import com.thorrism.designtools.views.ShakeEditText;
@@ -66,6 +69,19 @@ public class DemoActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+    }
+
+    public void showSnackbar(String str) {
+        final Snackbar bar = Snackbar.make(findViewById(R.id.view_pager),
+                str,
+                Snackbar.LENGTH_LONG);
+        bar.setAction("CLEAR", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bar.dismiss();
+            }
+        }).setActionTextColor(Color.RED)
+                .show();
     }
 
     @FromXml
