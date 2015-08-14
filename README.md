@@ -1,5 +1,7 @@
 # Material Design Tools
-A repository for tools commonly used in applications to save time in development. The purpose of this repo is mostly for me to avoid producing boilerplate code over and over again, but I decided to share for others who may be interested. All the views use Material Design standards and should work for apis as far back as api 7. 
+A repository for tools commonly used in applications to save time in development. The purpose of this repo is mostly for me to avoid producing boilerplate code over and over again, but I decided to share for others who may be interested. All the views use Material Design standards and should work for apis before API 21 (some as far back as 7).
+
+I'm still working on getting this onto Maven, in order to supply an easy means to integrate with apps, but for now feel free to clone and use the library. 
 
 (**This is a work in progress, mostly for myself but made public for others to enjoy :-). **)
 
